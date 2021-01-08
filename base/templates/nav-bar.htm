@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} HACQS INITIATIVE | GHANA {% endblock %}</title>
+
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Nunito:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Merriweather+Sans:ital,wght@1,300&family=Open+Sans&display=swap" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fontawesome-free-5.14.0-web/css/fontawesome.css">
+
+    <!-- favicon -->
+    <link rel="icon" href="{% static './images/favicon.ico' %}">
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="{% static './css/style1.css' %}">
+    <link rel="stylesheet" href="{% static './css/style.css' %}">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-brand">
+                <a href="index.htm">
+                    <img style="width: 5rem;" src="{% static 'images/logo2.png' %}" alt="logo">
+                    <span class="nav-text">HACQS INITIATIVE GHANA</span>
+                </a>
+            </div>
+
+            <ul class="nav-list">
+                <li class="custom-nav-item "><a href="{% url 'home' %}" class="custom-nav-link">Home</a></li>
+                <li id="about" class="custom-nav-item"><a href="{% url 'about' %}" class="custom-nav-link">About Us</a></li>
+                <li id="news" class="custom-nav-item"><a href="{% url 'news' %}" class="custom-nav-link">News</a></li>
+                <li id="gallery" class="custom-nav-item"><a href="{% url 'gallery' %}" class="custom-nav-link">Gallery</a></li>
+                <li id="contact" class="custom-nav-item"><a href="{% url 'contact' %}" class="custom-nav-link">Get In Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+

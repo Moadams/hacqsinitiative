@@ -1,0 +1,72 @@
+{% extends 'main.htm' %} {% load static %} {% block content %}
+
+<style>
+    .post-header{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: inherit;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        padding-bottom: 50px;
+        padding-top: 50px;
+    }
+    .post-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        padding: 50px;
+        
+    }
+    .post-column {
+        width: 100%;
+        min-height: 1px;
+        padding-right: 20px;
+        padding-left: 20px;
+        
+    }
+    .post-column img{
+        height: 400px;
+    }
+    .post-info h1{
+        font-size: 57px;
+        margin: 0;
+    }
+    .post-body{
+        padding: 50px 0;
+    }
+</style>
+
+<div class="container">
+    
+    <div class="post-header">
+        <div class="post-column">
+            <img src="{% static 'images/background.jpg' %}" alt="HIGH image">
+        </div>
+        <div class="post-column post-info">
+            <p>
+                {{post.date_created}}
+            </p>
+            <h1>
+                {{ post.heading }}
+                
+            </h1>
+            <small style="font-size: 15px; font-style: italic; ">
+                {{ post.sub_heading }}
+            </small>
+        </div>
+    </div>
+
+    <hr>
+
+    <p class="post-body">
+        {{ post.body }}
+    </p>
+
+    
+</div>
+
+
+
+{% endblock %}

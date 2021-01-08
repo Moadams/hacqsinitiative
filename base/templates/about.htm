@@ -1,0 +1,82 @@
+{% extends 'main.htm' %} {% load static %} {% block content %} 
+<style>
+    .opening-section {
+        background: linear-gradient(140deg, rgba(110, 110, 148, 0.5), rgba(145, 126, 126, 0.3)), url("{% static 'images/about-header.jpg' %} ");
+        height: 80vh;
+        background-size: cover;
+        width: 100%;
+    }
+</style>
+
+
+
+<section class="hero opening-section">
+    <div class="container">
+        <div class="main-message">
+
+            <p id="about-header-p">
+                Lorem ipsum dolor sit, amet conseconsectetur adipisicing elit. Placeat corporis asperiores omnis vitae facilis
+            </p>
+
+        </div>
+    </div>
+</section>
+
+
+
+<div class="main-container">
+    <section>
+        <p class="lead">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi dolores voluptate minus nostrum sed iure vel id unde, fugiat animi nihil reprehenderit reiciendis consequuntur! Consequuntur, hic aliquam. Quae, corporis eum?
+        </p>
+    </section>
+
+    <section>
+        <div class="custom-row">
+            <div class="col1 column">
+                <p style="font-size: 20px;
+            font-weight: 400;
+            line-height: 26px;
+            margin-bottom: 20px;">
+
+
+                    natus optio facilis commodi a ducimus vel magni cumque doloribus nobis mollitia consequuntur itaque expedita placeat iure, omnis dolore, asperiores hic. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero aut, in facere corporis voluptates omnis
+                    velit iste fugit assumenda accusamus, iusto consectetur accusantium saepe, quibusdam quas illo veritatis officia magnam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quibusdam ea quidem itaque consequuntur
+                    tempore, culpa quo dolorum similique minus incidunt velit debitis veniam ad dolor iure. Sed, expedita ex! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit natus optio facilis commodi a ducimus vel magni cumque
+                    doloribus nobis mollitia consequuntur itaque expedita placeat iure, omnis dolore, asperiores hic.
+                </p>
+            </div>
+
+            <div class="col2 column">
+                <img src="{% static './images/Background.jpg' %}" alt="image">
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<section id="mission">
+    <div class="main-container">
+        <h2>Our Mission And Vision</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique pariatur ut quasi exercitationem consectetur, laboriosam odio maxime, quae enim corporis necessitatibus iste neque totam nemo eos in. Numquam, at molestias?
+        </p>
+    </div>
+
+</section>
+<!-- News letter -->
+<div class="subscribe">
+    <h1>Subscribe to our news letter</h1>
+    <div>
+        <form action="">
+            <input type="email" name="client-email" id="client-email" placeholder="Email Address">
+            <a href="#" class="subscribe-btn">Subscribe</a>
+        </form>
+    </div>
+</div>
+
+<script>
+    activeNav = document.getElementById('about')
+    activeNav.classList += ' custom-nav-link-active'
+</script>
+{% endblock %}
