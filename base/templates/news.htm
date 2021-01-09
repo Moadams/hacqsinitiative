@@ -26,7 +26,11 @@
         <p class="news-body">
             This page consist of all the news and posts about the initiative that you need to know, any of the list to read more.
         </p>
+        {% if user.is_authenticated %}
+        <a href="{% url 'add_post' %}" class="news-button">Add A New Post</a>
+        {% else %}
         <a href="" class="news-button"></a>
+        {% endif %}
     </div>
 
     {% for post in news %}
@@ -48,6 +52,8 @@
             </div>
         </a>
     </div>
+    {% empty %}
+    <h2>No News Yet</h2>
     {% endfor %}
     
 

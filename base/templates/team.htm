@@ -1,0 +1,84 @@
+{% extends 'main.htm' %} {% load static %} {% block content %}
+
+<style>
+    .card-wrapper-custom{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 350px);
+        gap: 60px;
+    }
+    .position{
+        padding-bottom: 20px ;
+    }
+    .view-more{
+        text-align: center;
+        margin: 40px auto 0; 
+        width: fit-content;
+        transition: all 1s ease;
+    
+    }
+    .view-more-button{
+        background-color: blue;
+        padding: 1.5rem;
+        color: white;
+        font-size: 15px;
+        text-transform: uppercase;
+        transition: all 1s ease;
+    }
+    .view-more-button:hover {
+        background-color:rgb(72, 72, 255);
+        box-shadow: .5rem .5rem 3rem rgba(0, 0, 0, 0.5);
+    }
+
+    .view-more a{
+        color: white;
+    }
+
+</style>
+
+<section class="team-section jumbo">
+    <div class="welcome-container">
+        <h1 class="heading">The team</h1>
+        <div class="card-wrapper-custom">
+            
+            
+            <!-- CARDS -->
+
+            {% for executive in executives %}
+                {% if executive.postition != 'member' %}
+                    <div class="card">
+                        <img src="{% static './images/Background.jpg' %}" alt="background image" class="card-img">
+                        <img src="{{ executive.image.url }}" alt="profile image" class="profile-img">
+                        <h1>{{executive.name}}</h1>
+                        <p class="position" style="text-transform: uppercase;">{{executive.position}}</p>
+                        <!-- <p class="about">
+                            {{executive.about}}
+                        </p> -->
+
+                        <ul class="social-media">
+                            <li>
+                                <a href="{{member.facebook}}"><img class="social-icons" src="{% static './images/icons/036-facebook.png' %}" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="{{member.twitter}}"><img class="social-icons" src="{% static './images/icons/008-twitter.png' %}" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="{{member.instagram}}"><img class="social-icons" src="{% static './images/icons/029-instagram.png' %}" alt=""></a>
+                            </li>
+                            <li>
+                                <a href=""><img class="social-icons" src="{% static './images/icons/033-google-plus.png' %}" alt=""></a>
+                            </li>
+                        </ul>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            
+        </div>
+        {% if user.is_authenticated %}
+        <div class="view-more">
+            <a href="{% url 'add_member' %}" class="view-more-button">Add New Member</a>
+        </div>
+        {% endif %}
+</section>
+
+
+{% endblock %}

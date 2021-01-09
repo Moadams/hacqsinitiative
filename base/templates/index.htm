@@ -59,8 +59,32 @@
         .view-more a{
             color: white;
         }
+
+        .position{
+        padding-bottom: 20px ;
+        }
         
+        .login-btn{
+                background-color: rgb(72, 72, 247);
+                padding: 6px 15px;
+                border-radius: 10px;
+                border-radius: 10px; 
+                color: rgb(255, 255, 255);
+                transition: .5s all;
+        }
+        .login-btn:hover{
+                background-color: white;
+                border: 1px solid rgb(91, 91, 236);
+                box-shadow: .5rem .5rem 3rem rgba(0, 0, 0, 0.5);
+        }
+        .login-btn:hover,
+        .login-btn a:hover{
+                color: rgb(31, 31, 156);
+        }
     </style>
+
+
+
 </head>
 
 <body>
@@ -141,9 +165,7 @@
                     <img src="{{ member.image.url }}" alt="profile image" class="profile-img">
                     <h1>{{member.name}}</h1>
                     <p class="position" style="text-transform: uppercase;">{{member.position}}</p>
-                    <p class="about">
-                        {{member.about}}
-                    </p>
+                    
 
                     <ul class="social-media">
                         <li>
@@ -166,7 +188,7 @@
             </div>
             
             <div class="view-more">
-                <a href="" class="view-more-button">View More</a>
+                <a href="{% url 'team' %}" class="view-more-button">View More</a>
             </div>
     </section>
 
@@ -214,6 +236,25 @@
                         <a href=""><img class="social-icons" src="{% static './images/icons/029-instagram.png' %}" alt=""></a>
                         <a href=""><img class="social-icons" src="{% static './images/icons/033-google-plus.png' %}" alt=""></a>
 
+                        {% if user.is_authenticated %}
+                        <p style="
+                            text-transform: uppercase;
+                            font-size: 20px;
+                            padding: 25px 5px;">
+                            <a href="{% url 'logout_user' %}" class="login-btn" style="color: rgb(179, 179, 179);">
+                                logout
+                            </a> 
+                        </p>
+                        {% else %}
+                        <p style="
+                            text-transform: uppercase;
+                            font-size: 20px;
+                            padding: 25px 5px;">
+                            <a href="{% url 'login_user' %}" class="login-btn" style="color: rgb(179, 179, 179);">
+                                login
+                            </a> 
+                        </p>
+                        {% endif %}
                     </div>
                 </div>
             </div>

@@ -38,9 +38,28 @@
                             <a href=""><img class="social-icons" src="{% static './images/icons/008-twitter.png' %}" alt=""></a>
                             <a href=""><img class="social-icons" src="{% static './images/icons/029-instagram.png' %}" alt=""></a>
                             <a href=""><img class="social-icons" src="{% static './images/icons/033-google-plus.png' %}" alt=""></a>
-
+                            {% if user.is_authenticated %}
+                            <p style="
+                                text-transform: uppercase;
+                                font-size: 20px;
+                                padding: 25px 5px;">
+                                <a href="{% url 'logout_user' %}" class="login-btn">
+                                    logout
+                                </a> 
+                            </p>
+                            {% else %}
+                            <p style="
+                                text-transform: uppercase;
+                                font-size: 20px;
+                                padding: 25px 5px;">
+                                <a href="{% url 'login_user' %}" class="login-btn">
+                                    login
+                                </a> 
+                            </p>
+                            {% endif %}
                         </div>
                     </div>
+
                 </div>
             </div>
             <div class="copyright">
