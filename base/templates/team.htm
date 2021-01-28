@@ -37,7 +37,7 @@
 
 <section class="team-section jumbo">
     <div class="welcome-container">
-        <h1 class="heading">The team</h1>
+        <h1 class="heading" style="z-index: -1;">The team</h1>
         <div class="card-wrapper-custom">
             
             
@@ -80,5 +80,9 @@
         {% endif %}
 </section>
 
+<script>
+    activeNav = document.getElementById('team')
+    activeNav.classList += ' custom-nav-link-active'
+</script>
 
 {% endblock %}

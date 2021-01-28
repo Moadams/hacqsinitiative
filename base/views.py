@@ -48,8 +48,7 @@ def news(request):
 def gallery(request):
     return render(request, 'gallery.htm')
 
-def contact(request):
-    return render(request,'contact.htm')
+
 
 def post(request,slug):
     post = Post.objects.get(slug = slug)

@@ -32,13 +32,11 @@
             border-radius: 10px; color: rgb(255, 255, 255);
             transition: .5s all;
         }
-        .login-btn:hover{
-            background-color: white;
-            border: 1px solid rgb(91, 91, 236);
-            box-shadow: .5rem .5rem 3rem rgba(0, 0, 0, 0.5);
+        .footer-btn:hover{
+            color: rgb(99, 98, 98);
         }
-        .login-btn:hover,
-        .login-btn a:hover{
+        .footer-btn:hover,
+        .footer-btn a:hover{
             color: rgb(91,91,236);
         }
     </style>
@@ -49,7 +47,7 @@
         <nav>
             <div class="nav-brand">
                 <a href="{% url 'home' %}">
-                    <img style="width: 5rem;" src="{% static 'images/logo2.png' %}" alt="logo">
+                    <img style="width: 5rem;" src="{% static './images/transparent_logo(1).png' %}" alt="logo">
                     <span class="nav-text">HACQS INITIATIVE GHANA</span>
                 </a>
             </div>
@@ -59,7 +57,7 @@
                 <li id="about" class="custom-nav-item"><a href="{% url 'about' %}" class="custom-nav-link">About Us</a></li>
                 <li id="news" class="custom-nav-item"><a href="{% url 'news' %}" class="custom-nav-link">News</a></li>
                 <li id="gallery" class="custom-nav-item"><a href="{% url 'gallery' %}" class="custom-nav-link">Gallery</a></li>
-                <li id="contact" class="custom-nav-item"><a href="{% url 'contact' %}" class="custom-nav-link">Get In Contact</a></li>
+                <li id = 'team' class="custom-nav-item"><a href="{% url 'team' %}" class="custom-nav-link">TEAM</a></li>
             </ul>
             <div class="burger">
                 <div class="line1"></div>

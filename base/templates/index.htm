@@ -94,7 +94,7 @@
             <nav>
                 <div class="nav-brand">
                     <a href="#">
-                        <img style="width: 5rem;" src="{% static './images/logo2.png' %}" alt="logo">
+                        <img style="width: 5rem;" src="{% static './images/transparent_logo(1).png' %}" alt="logo">
                         <span class="nav-text">HACQS INITIATIVE GHANA</span>
                     </a>
                 </div>
@@ -104,7 +104,7 @@
                     <li class="custom-nav-item"><a href="{% url 'about' %}" class="custom-nav-link">About Us</a></li>
                     <li class="custom-nav-item"><a href="{% url 'news' %}" class="custom-nav-link">News</a></li>
                     <li class="custom-nav-item"><a href="{% url 'gallery' %}" class="custom-nav-link">Gallery</a></li>
-                    <li class="custom-nav-item"><a href="{% url 'contact' %}" class="custom-nav-link">Get In Contact</a></li>
+                    <li class="custom-nav-item"><a href="{% url 'team' %}" class="custom-nav-link">TEAM</a></li>
                 </ul>
                 <div class="burger">
                     <div class="line1"></div>
@@ -238,22 +238,26 @@
 
                         {% if user.is_authenticated %}
                         <p style="
-                            text-transform: uppercase;
-                            font-size: 20px;
-                            padding: 25px 5px;">
-                            <a href="{% url 'logout_user' %}" class="login-btn" style="color: rgb(179, 179, 179);">
-                                logout
-                            </a> 
-                        </p>
-                        {% else %}
-                        <p style="
-                            text-transform: uppercase;
-                            font-size: 20px;
-                            padding: 25px 5px;">
-                            <a href="{% url 'login_user' %}" class="login-btn" style="color: rgb(179, 179, 179);">
-                                login
-                            </a> 
-                        </p>
+                        text-transform: uppercase;
+                        font-size: 1.5rem;
+                        padding: 0;
+                        margin: 1.5rem 0;
+                        ">
+                        <a href="{% url 'logout_user' %}" style="color: white;" class="footer-btn">
+                            logout
+                        </a> 
+                    </p>
+                    {% else %}
+                    <p style="
+                    text-transform: uppercase;
+                        font-size: 1.5rem;
+                        padding: 0;
+                        margin: 1.5rem 0
+                        ">
+                        <a href="{% url 'login_user' %}" style="color: white;" class="">
+                            login
+                        </a> 
+                    </p>
                         {% endif %}
                     </div>
                 </div>
