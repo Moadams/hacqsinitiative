@@ -55,6 +55,21 @@
             </div>
         </a>
     </div>
+    {% if user.is_authenticated %}
+    <p>
+        <span>
+            <a style="color: blue;" href="{% url 'update_post' post.slug %}">
+
+                Update
+            </a>
+            |
+            <a onclick="confirm('Are you sure?');" style="color: blue;" href="{% url 'delete_post' post.slug %}">
+
+                Delete
+            </a>
+        </span>
+    </p>
+    {% endif %}
     {% empty %}
     <h2>No News Yet</h2>
     {% endfor %}

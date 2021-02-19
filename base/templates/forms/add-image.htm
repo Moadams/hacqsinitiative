@@ -1,0 +1,56 @@
+{% extends 'main.htm' %} 
+{% load static %}
+{% block content %}
+
+<style>
+    body{
+        font-size: 18px;
+    }
+    form{
+        border: 1px solid rgb(155, 154, 154);
+        border-radius: 5%;
+        padding: 20px 10px;
+        
+    }
+</style>
+
+<section class="team-section jumbo">
+    <div class="welcome-container">
+        <h1 class="heading">Add Image</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div>
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+    
+                        <div class="form-group m-3">
+                            <label for="">Select Event</label>
+                            <select class="form-control" name="event" id="">
+                                <option value="none">Select Event</option>
+                                {% for event in events %}
+                                    <option value="{{event.id}}">{{event}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+    
+                        <div class="form-group m-3">
+                            <label for="">Create A New Event(Optional)</label>
+                            <input type="text" name="new_event" id="" class="form-control">
+                        </div>
+                        
+                        <div class="form-group m-3">
+                            <label for="">Upload Image</label>
+                            <input required name="images" type="file" name="" id="" multiple  class="form-control-file">
+                        </div>
+    
+                        <input type="submit" value="Add Image" class="btn btn-lg btn-primary m-3" >
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock %}

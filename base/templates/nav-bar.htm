@@ -24,6 +24,10 @@
     <link rel="stylesheet" href="{% static './css/style1.css' %}">
     <link rel="stylesheet" href="{% static './css/style.css' %}">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
     <style>
         .login-btn{
             background-color: rgb(72, 72, 247);
@@ -39,12 +43,22 @@
         .footer-btn a:hover{
             color: rgb(91,91,236);
         }
+        /* html{
+            font-size: 10px;
+        } */
+        a{
+        text-decoration: none;
+    }
+    a:hover{
+        text-decoration: none;
+        color: white;
+    }
     </style>
 </head>
 
 <body>
     <header>
-        <nav>
+        <nav style="z-index: 1;">
             <div class="nav-brand">
                 <a href="{% url 'home' %}">
                     <img style="width: 5rem;" src="{% static './images/transparent_logo(1).png' %}" alt="logo">
@@ -52,7 +66,7 @@
                 </a>
             </div>
 
-            <ul class="nav-list">
+            <ul class="nav-list" style="margin-bottom:0;">
                 <li class="custom-nav-item "><a href="{% url 'home' %}" class="custom-nav-link">Home</a></li>
                 <li id="about" class="custom-nav-item"><a href="{% url 'about' %}" class="custom-nav-link">About Us</a></li>
                 <li id="news" class="custom-nav-item"><a href="{% url 'news' %}" class="custom-nav-link">News</a></li>

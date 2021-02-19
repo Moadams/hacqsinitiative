@@ -1,0 +1,55 @@
+{% extends 'main.htm' %} {% load static %} 
+{% load crispy_forms_tags %}
+{% block content %}
+
+<style>
+     .add-btn{
+            background-color: blue;
+            padding: 1.5rem;
+            color: white;
+            font-size: 15px;
+            text-transform: uppercase;
+            transition: all 1s ease;
+            margin-bottom: 20px;
+            margin-top: 10px;
+            border: none;
+        }
+        .add-btn:hover {
+            background-color:rgb(72, 72, 255);
+            box-shadow: .5rem .5rem 3rem rgba(0, 0, 0, 0.5);
+        }
+
+        .view-more a{
+            color: white;
+        }
+        body{
+            font-size: 20px;
+        }
+        input,select{
+            width: 100%;
+            height: 25px;
+        }
+        textarea{
+            width: 100%;
+        }
+        
+        .form-group{
+            margin: 15px auto;
+        }
+</style>
+
+<div class="container">
+    <div style="height: 80px;">
+        
+    </div>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.media}}
+        {{form|crispy}}
+
+        <button type="submit" class="add-btn"> Update</button>
+    </form>
+</div>
+
+
+{% endblock %}

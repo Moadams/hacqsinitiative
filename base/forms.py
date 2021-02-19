@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Post,Member
+from .models import Post,Executive
 
 class AddPostForm(ModelForm):
     class Meta:
@@ -12,7 +12,7 @@ class AddPostForm(ModelForm):
         ]    
         
         
-class AddMemberForm(ModelForm):
+class AddExecutiveForm(ModelForm):
     class Meta:
-        model = Member
+        model = Executive
         fields = '__all__'

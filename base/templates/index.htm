@@ -81,6 +81,20 @@
         .login-btn a:hover{
                 color: rgb(31, 31, 156);
         }
+        html{
+            font-size: 10px;
+        }
+
+        
+    @media screen and (min-width: 214px) {
+
+        .opening-section {
+            height: 65vh;
+        }
+        .main-message p{
+            font-size: 15px;
+        }
+    }
     </style>
 
 
@@ -119,8 +133,14 @@
         <div class="container">
             <div class="main-message">
                 <h1>Welcome</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, rerum. Ea ut, ipsa distinctio culpa, deleniti animi facere magni pariatur earum unde blanditiis! Blanditiis voluptatibus aperiam perspiciatis repudiandae cupiditate iste.
+                <p style="font-weight: lighter;">
+                    HACQS INITIATIVE has a sole aim of helping the needy to help the appreciate life just like everyone else. We help them with the little that we have.
+                    You can also help us to help them by donating to our account, and we pledge to use it accordingly.
+
+                    <div class="view-more">
+                        <a href="{% url 'donate' %}" class="subscribe-btn" >Donate Now</a>
+                    </div>
+
                 </p>
                 <!-- <div class="cta">
                     <a href="#" class="btn">Book Now</a>
@@ -134,7 +154,7 @@
         <div class="welcome-container">
             <div class="custom-row">
                 <div class="col1 column">
-                    <img src="{% static './images/images/Felix.jpg' %}" alt="President" class="image-fluid">
+                    <img src="{% static './images/Felix.jpg' %}" alt="President" class="image-fluid">
                 </div>
                 <div class="col2 column">
                     <h2>Welcome</h2>
@@ -159,27 +179,27 @@
                 
                 <!-- CARDS -->
 
-                {% for member in members %}
+                {% for executive in executives %}
                 <div class="card">
                     <img src="{% static './images/Background.jpg' %}" alt="background image" class="card-img">
-                    <img src="{{ member.image.url }}" alt="profile image" class="profile-img">
-                    <h1>{{member.name}}</h1>
-                    <p class="position" style="text-transform: uppercase;">{{member.position}}</p>
+                    <img src="{{ executive.image.url }}" alt="profile image" class="profile-img">
+                    <h1>{{executive.name}}</h1>
+                    <p class="position" style="text-transform: uppercase;">{{executive.position}}</p>
                     
 
                     <ul class="social-media">
                         <li>
-                            <a href="{{member.facebook}}"><img class="social-icons" src="{% static './images/icons/036-facebook.png' %}" alt=""></a>
+                            <a href="{{executive.facebook}}" target="_blank"><img class="social-icons" src="{% static './images/icons/036-facebook.png' %}" alt=""></a>
                         </li>
                         <li>
-                            <a href="{{member.twitter}}"><img class="social-icons" src="{% static './images/icons/008-twitter.png' %}" alt=""></a>
+                            <a href="{{executive.twitter}}" target="_blank"><img class="social-icons" src="{% static './images/icons/008-twitter.png' %}" alt=""></a>
                         </li>
                         <li>
-                            <a href="{{member.instagram}}"><img class="social-icons" src="{% static './images/icons/029-instagram.png' %}" alt=""></a>
+                            <a href="{{executive.instagram}}" target="_blank"><img class="social-icons" src="{% static './images/icons/029-instagram.png' %}" alt=""></a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href=""><img class="social-icons" src="{% static './images/icons/033-google-plus.png' %}" alt=""></a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
                 {% endfor %}

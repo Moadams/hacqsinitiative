@@ -44,38 +44,66 @@
             <!-- CARDS -->
 
             {% for executive in executives %}
-                {% if executive.postition != 'member' %}
-                    <div class="card">
+                
+                    <div class="card" >
                         <img src="{% static './images/Background.jpg' %}" alt="background image" class="card-img">
                         <img src="{{ executive.image.url }}" alt="profile image" class="profile-img">
-                        <h1>{{executive.name}}</h1>
+                        <h1>
+                            <a style="color:black;" href="{% url 'update_executive' executive.id %}">
+                                {{executive.name}}
+
+                            </a>
+                        </h1>
                         <p class="position" style="text-transform: uppercase;">{{executive.position}}</p>
                         <!-- <p class="about">
                             {{executive.about}}
                         </p> -->
+                        {% if user.is_authenticated %}
+                        <p style="margin-bottom: 10px;">
+                            <span>
+                                <a style="color: blue;" href="{% url 'update_executive' executive.id %}">
 
+                                    Update 
+                                </a>
+                                |
+                                <a onclick="confirm('Are you sure?');" style="color: blue;" href="{% url 'delete_executive' executive.id %}">
+                                    Delete
+                                </a> 
+                            </span>
+
+                        </p>
+                        {% endif %}
                         <ul class="social-media">
                             <li>
-                                <a href="{{member.facebook}}"><img class="social-icons" src="{% static './images/icons/036-facebook.png' %}" alt=""></a>
+                                <a href="www.facebook.com"><img class="social-icons" src="{% static './images/icons/036-facebook.png' %}" alt=""></a>
                             </li>
                             <li>
-                                <a href="{{member.twitter}}"><img class="social-icons" src="{% static './images/icons/008-twitter.png' %}" alt=""></a>
+                                <a href="{{executive.twitter}}"><img class="social-icons" src="{% static './images/icons/008-twitter.png' %}" alt=""></a>
                             </li>
                             <li>
-                                <a href="{{member.instagram}}"><img class="social-icons" src="{% static './images/icons/029-instagram.png' %}" alt=""></a>
+                                <a href="{{executive.instagram}}"><img class="social-icons" src="{% static './images/icons/029-instagram.png' %}" alt=""></a>
                             </li>
                             <li>
                                 <a href=""><img class="social-icons" src="{% static './images/icons/033-google-plus.png' %}" alt=""></a>
                             </li>
                         </ul>
                     </div>
-                {% endif %}
-            {% endfor %}
-            
+                    
+                    {% empty %}
+                    <style>
+                        .card-wrapper-custom{
+                            display: block;
+                        }
+                    </style>
+                    <div style="border: 1px solid rgb(94, 94, 94); padding: 10px;">
+        
+                        <h1 style="text-align: center; font-size: 50px; ">No Team Members</h1>
+                      </div>
+                    {% endfor %}
         </div>
         {% if user.is_authenticated %}
         <div class="view-more">
-            <a href="{% url 'add_member' %}" class="view-more-button">Add New Member</a>
+            <a href="{% url 'add_executive' %}" class="view-more-button">Add New Executive</a>
         </div>
         {% endif %}
 </section>

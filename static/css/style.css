@@ -10,7 +10,7 @@
 
 html {
     font-family: 'Open Sans', sans-serif;
-    /* font-size: 10px; */
+    font-size: 10px;
     box-sizing: border-box;
 }
 
@@ -177,8 +177,7 @@ a.custom-nav-link:hover {
 
 .main-message p {
     font-weight: 100;
-    text-transform: capitalize;
-    letter-spacing: .5px;
+    
 }
 
 

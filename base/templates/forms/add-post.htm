@@ -40,6 +40,7 @@
     </div>
     <form action="" method="post">
         {% csrf_token %}
+        {{form.media}}
         {{form|crispy}}
 
         <button type="submit" class="add-btn" >Add Post</button>
