@@ -28,7 +28,7 @@ SECRET_KEY = '+2xg809l55z()fp6i_0i*1_*38qnu821d2wtnyj1vcjt=!0&&t'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '127.0.0.1' , 'high.herokuapp.com'
+    '127.0.0.1' , 'hacqsinitiative.herokuapp.com'
 ]
 
 
