@@ -1,18 +1,216 @@
 {% extends 'main.htm' %} {% load static %} {% block content %}
 
-
-
 <style>
+    .post-header{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: inherit;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        padding-bottom: 50px;
+        padding-top: 50px;
+    }
+    .post-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        padding: 50px;
+        
+    }
+    .post-column {
+        width: 100%;
+        min-height: 1px;
+        padding-right: 20px;
+        padding-left: 20px;
+        
+    }
+    .post-column img{
+        height: 400px;
+    }
+    .post-info h1{
+        font-size: 57px;
+        margin: 0;
+    }
+    .post-body{
+        padding: 50px 0;
+    }
 
+    
+    #profile-pic{ 
+            background-color: rgb(238, 238, 238);
+            padding: 10px;
+			width:200px;
+            height: 200px;
+			display:block;
+			margin: 0 auto;
+			border-radius: 50%;
+			float:left;
+            margin-bottom: 10px;
+
+		}
+    #left-wrapper{
+			background-color: #72cca7;
+			box-shadow: 0 1px 3px 0 #dce0e6;
+		    border-radius: 4px;
+		    border: 1px solid transparent;
+		    padding: 30px;	
+	}
+
+    #left-wrapper-header{
+			min-width:50%;
+			float:left;
+			padding-left:20px;
+
+		}
+
+	#left-wrapper-header h4{
+			color:#fff;
+            font-size: 35px;
+            text-transform: uppercase;
+
+	}
+    .text-box{
+        width: 100%;
+        border: none;
+        padding: 5px 2px;
+        margin-bottom: 10px;
+        border-radius: 3px;
+    }
+    .text-box:focus{
+        border: none;
+    }
+    .myButton {
+			background-color:#72cca7;
+			display:inline-block;
+			cursor:pointer;
+			color:#ffffff;
+			font-family:Verdana;
+			font-size:17px;
+			padding:10px;
+			width:100%;
+			border-radius: 0;
+			text-decoration:none;
+			text-align: center;
+			transition: .3s;
+            border: none;
+	}
+	.myButton:hover {
+			opacity: .6;
+	}
+    @media screen and (max-width: 768px){
+        .post-header{
+            flex-direction: column;
+        }
+    }
+    @media screen and (max-width: 1024px) and (min-width: 375px) {
+        #profile-pic{
+            height: 150px;
+            width: 150px;
+        }
+        #left-wrapper-header h4{
+            font-size: 40px;
+        }
+    }
+    @media screen and (max-width: 375px){
+        #profile-pic{
+            height: 100px;
+            width: 100px;
+        }
+        #left-wrapper-header h4{
+            font-size: 20px;
+        }
+    }
 </style>
+
+
+
 
 <section class="team-section jumbo">
     <div class="welcome-container">
         <h1 class="heading" style="z-index: -1;">Donate Now</h1>
-
     </div>
-            
-            
+          
+    
+<div class="container">
+    
+    <div class="post-header">
+        <div class="post-column">
+            <div id="left-wrapper" style="font-size: 15px;">
+                <div style="display: flex; align-items: center;">
+                    <img id="profile-pic" src="{% static 'images/transparent_logo(1).png' %}">
+                    <div id="left-wrapper-header">
+                        <h4>Help Us Help Others</h4>
+                        <p>No Amount is too small</p>
+                    </div>
+                </div>
+                <div>
+                    <form action="" method="post">
+                        <div class="form-field-12">
+                            <label for="amount">Enter Amount</label>
+                            <br>
+                            <input type="text" class="text-box" name = 'amount' required>
+                            
+                        </div>
+                        
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <input required type="text" class="text-box" name="email" placeholder="Enter Your email">
+                            </div>
+        
+                            <div class="col-md-6">
+                                <input required type="text" name="nickname" class="text-box" placeholder="Your Name">
+                            </div>
+                        </div>
+    
+                    <div class="form-row">
+                        <label for="card-element">
+                        Credit or debit card
+                        </label>
+                        <div id="card-element">
+                        <!-- A Stripe Element will be inserted here. -->
+                        </div>
+    
+                        <!-- Used to display form errors. -->
+                        <div id="card-errors" role="alert"></div>
+                    </div>
+                    
+                    <div style="clear:left"></div>
+                    <hr>
+    
+                        <input  class="myButton" style="background-color:#10a195" type="submit" value="Submit Payment" name="">
+    
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="post-column post-info">
+            <p>
+                {{post.date_created}}
+            </p>
+            <h1>
+                {{ post.heading }}
+                
+            </h1>
+            <small style="font-size: 15px; font-style: italic; ">
+                {{ post.sub_heading }}
+            </small>
+        </div>
+    </div>
+
+    <hr>
+
+    <p class="post-body">
+        {{ post.body|safe }}
+    </p>
+
+    
+</div>
+
+    
+
               
           
 </section>

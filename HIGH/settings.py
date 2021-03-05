@@ -27,7 +27,9 @@ SECRET_KEY = '+2xg809l55z()fp6i_0i*1_*38qnu821d2wtnyj1vcjt=!0&&t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1' , 'high.herokuapp.com'
+]
 
 
 # Application definition
@@ -152,3 +154,5 @@ CKEDITOR_CONFIGS = {
 	}
 
 
+if os.getcwd() == '/app/':
+    DEBUG = False

@@ -1,0 +1,1 @@
+web: gunicorn magbene.wsgi --log-file -
