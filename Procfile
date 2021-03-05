@@ -1,1 +1,1 @@
-web: gunicorn high.wsgi --log-file -
+web: gunicorn HIGH.wsgi --log-file -
