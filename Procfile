@@ -1,1 +1,1 @@
-web: gunicorn magbene.wsgi --log-file -
+web: gunicorn high.wsgi --log-file -
