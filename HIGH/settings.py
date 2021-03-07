@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '+2xg809l55z()fp6i_0i*1_*38qnu821d2wtnyj1vcjt=!0&&t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1' , 'hacqsinitiative.herokuapp.com'
@@ -140,7 +140,10 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
@@ -154,5 +157,5 @@ CKEDITOR_CONFIGS = {
 	}
 
 
-# if os.getcwd() == '/app/':
-#     DEBUG = False
+if os.getcwd() == '/app/':
+    DEBUG = False
