@@ -11,12 +11,16 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 import os
-
+import dj_database_url
+import dotenv
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+dotenv_file = os.path.join(BASE_DIR, ".env")
+if os.path.isfile(dotenv_file):
+    dotenv.load_dotenv(dotenv_file)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -43,7 +47,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'base.apps.BaseConfig',
     'crispy_forms',
-    'ckeditor'
+    'ckeditor',
+    'cloudinary',
+    'cloudinary_storage'
 ]
 
 CRISPY_TEMPLATE_PACK= 'bootstrap4'
@@ -86,12 +92,15 @@ WSGI_APPLICATION = 'HIGH.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 
 # Password validation
@@ -136,6 +145,8 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/images/'
 
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
@@ -156,6 +167,17 @@ CKEDITOR_CONFIGS = {
     		} ,
 	}
 
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dil4kfevl',
+    'API_KEY': '756778181757396',
+    'API_SECRET': 'ym2X855W2Px2MOWzUPIwCEFv_wo'
+}
+
+django_heroku.settings(locals())
+
+options = DATABASES['default'].get('OPTIONS', {})
+options.pop('sslmode',None)
 
 if os.getcwd() == '/app/':
     DEBUG = False
