@@ -24,9 +24,9 @@ class Executive(models.Model):
     email = models.CharField(max_length=200)
     phone = models.CharField(max_length = 14)
     position = models.OneToOneField(Position, on_delete = models.SET_NULL, null=True)
-    twitter = models.URLField(max_length=200)
-    facebook = models.URLField(max_length=200)
-    instagram = models.URLField(max_length=200)
+    twitter = models.URLField(max_length=200, blank = True, null = True)
+    facebook = models.URLField(max_length=200, blank = True, null = True)
+    instagram = models.URLField(max_length=200, blank = True, null = True)
     
     
     def __str__(self):
