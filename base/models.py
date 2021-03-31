@@ -21,7 +21,7 @@ class Event(models.Model):
 class Executive(models.Model):
     name = models.CharField(max_length=200)
     image = models.ImageField(upload_to = 'images', default = 'user-image.jpg')
-    email = models.CharField(max_length=200)
+    email = models.CharField(max_length=200, null = True, blank = True)
     phone = models.CharField(max_length = 14)
     position = models.OneToOneField(Position, on_delete = models.SET_NULL, null=True)
     twitter = models.URLField(max_length=200, blank = True, null = True)
