@@ -12,6 +12,7 @@ urlpatterns = [
     path('team/',views.team, name = 'team'),
     
     path('add-post/',views.addPost, name = 'add_post'),
+    
     path('add-member/',views.addExecutive, name = 'add_executive'),
     
     path('login/', views.loginPage, name = 'login_user'),

@@ -198,6 +198,37 @@ def addPost(request):
     return render(request,'forms/add-post.htm',context)
 
 
+# -------------------------------------------------------------------------------------
+#                        UPDATE POST VIEW
+# -------------------------------------------------------------------------------------
+
+def updatePost(request,slug):
+    post = Post.objects.get(slug = slug)
+    postForm = AddPostForm(instance=post)
+    
+    if request.method == 'POST':
+        postForm = AddPostForm(request.POST,instance = post)
+        if postForm.is_valid():
+            postForm.save()
+            return redirect('news')
+    
+    context = {
+        'form':postForm
+    }
+    return render(request,'forms/update-member.htm',context)
+
+
+
+# -------------------------------------------------------------------------------------
+#                        DELETE POST VIEW
+# -------------------------------------------------------------------------------------
+
+def deletePost(request,slug):
+    Post.objects.get(slug = slug).delete()
+    
+    return redirect('news')
+
+
 
 # -------------------------------------------------------------------------------------
 #                        ADD EXECUTIVE VIEW
@@ -251,35 +282,6 @@ def deleteExecutive(request,pk):
     return redirect('team')
 
 
-# -------------------------------------------------------------------------------------
-#                        UPDATE POST VIEW
-# -------------------------------------------------------------------------------------
-
-def updatePost(request,slug):
-    post = Post.objects.get(slug = slug)
-    postForm = AddPostForm(instance=post)
-    
-    if request.method == 'POST':
-        postForm = AddPostForm(request.POST,instance = post)
-        if postForm.is_valid():
-            postForm.save()
-            return redirect('news')
-    
-    context = {
-        'form':postForm
-    }
-    return render(request,'forms/update-member.htm',context)
-
-
-
-# -------------------------------------------------------------------------------------
-#                        DELETE POST VIEW
-# -------------------------------------------------------------------------------------
-
-def deletePost(request,slug):
-    Post.objects.get(slug = slug).delete()
-    
-    return redirect('news')
 
 
 
