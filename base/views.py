@@ -207,7 +207,7 @@ def updatePost(request,slug):
     postForm = AddPostForm(instance=post)
     
     if request.method == 'POST':
-        postForm = AddPostForm(request.POST,instance = post)
+        postForm = AddPostForm(request.POST,request.FILES,instance = post)
         if postForm.is_valid():
             postForm.save()
             return redirect('news')
