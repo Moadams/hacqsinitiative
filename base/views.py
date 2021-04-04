@@ -170,7 +170,7 @@ def post(request,slug):
 # -------------------------------------------------------------------------------------
 
 def team(request):
-    executives = Executive.objects.all()
+    executives = Executive.objects.all().order_by('position')
     context = {
         'executives':executives
     }
