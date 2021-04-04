@@ -227,7 +227,7 @@ def updateExecutive(request,pk):
     executiveForm = AddExecutiveForm(instance=executive)
     
     if request.method == 'POST':
-        executiveForm = AddExecutiveForm(request.POST,instance = executive)
+        executiveForm = AddExecutiveForm(request.POST,request.FILES,instance = executive)
         if executiveForm.is_valid():
             executiveForm.save()
             return redirect('team')
