@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,7 +24,7 @@
         .hero {
             width: 100%;
             height: 80vh;
-            background: linear-gradient(135deg, rgba(23, 24, 53, 0.6)0%, rgba(163, 86, 63, 0.5)), url("");
+            background: linear-gradient(135deg, rgba(23, 24, 53, 0.6)0%, rgba(163, 86, 63, 0.5)), url("{% static 'images/header-image.jpg' %}");
             background-size: cover;
             background-repeat: no-repeat;
         }
@@ -103,7 +103,7 @@
             <nav>
                 <div class="nav-brand">
                     <a href="#">
-                        <img style="width: 5rem;" src="" alt="logo">
+                        <img style="width: 5rem;" src="{% static 'images/transparent_logo(1).png' %}" alt="logo">
                         <span class="nav-text">HACQS INITIATIVE GHANA</span>
                     </a>
                 </div>
