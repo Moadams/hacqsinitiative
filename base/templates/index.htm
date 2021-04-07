@@ -89,5 +89,45 @@
         </div>
     </section>
     
+    <!-- Meet the team Section -->
+    <section class="team-section jumbo">
+        <div class="welcome-container">
+            <h1 class="heading">Meet the team</h1>
+            <div class="card-wrapper">
+                
+                
+                <!-- CARDS -->
+
+                {% for executive in executives %}
+                <div class="card">
+                    <img src="" alt="background image" class="card-img">
+                    <img src="{{ executive.image.url }}" alt="profile image" class="profile-img">
+                    <h1>{{executive.name}}</h1>
+                    <p class="position" style="text-transform: uppercase;">{{executive.position}}</p>
+                    
+
+                    <ul class="social-media">
+                        <li>
+                            <a href="{{executive.facebook}}" target="_blank"><img class="social-icons" src="" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="{{executive.twitter}}" target="_blank"><img class="social-icons" src="" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="{{executive.instagram}}" target="_blank"><img class="social-icons" src="" alt=""></a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                {% endfor %}
+
+                
+            </div>
+            
+            <div class="view-more">
+                <a href="{% url 'team' %}" class="view-more-button">View More</a>
+            </div>
+    </section>
+    
 </body>
 </html>
