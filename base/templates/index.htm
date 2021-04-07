@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     <!-- favicon -->
-    <link rel="icon" href="./images/favicon.ico">
+    
 
 
 
@@ -113,7 +113,7 @@
             <nav>
                 <div class="nav-brand">
                     <a href="#">
-                        <img style="width: 5rem;" src="{% static './images/transparent_logo(1).png' %}" alt="logo">
+                        <img style="width: 5rem;" src="{% static 'images/transparent_logo(1).png' %}" alt="logo">
                         <span class="nav-text">HACQS INITIATIVE GHANA</span>
                     </a>
                 </div>
@@ -159,7 +159,7 @@
         <div class="welcome-container">
             <div class="custom-row">
                 <div class="col1 column">
-                    <img src="{% static './images/Felix.jpg' %}" alt="President" class="image-fluid">
+                    <img src="{% static 'images/Felix.jpg' %}" alt="President" class="image-fluid">
                 </div>
                 <div class="col2 column">
                     <h2>Welcome</h2>
@@ -186,7 +186,7 @@
 
                 {% for executive in executives %}
                 <div class="card">
-                    <img src="{% static './images/background.jpg' %}" alt="background image" class="card-img">
+                    <img src="{% static 'images/background.jpg' %}" alt="background image" class="card-img">
                     <img src="{{ executive.image.url }}" alt="profile image" class="profile-img">
                     <h1>{{executive.name}}</h1>
                     <p class="position" style="text-transform: uppercase;">{{executive.position}}</p>
@@ -257,10 +257,10 @@
                 <div class="social box">
                     <h2>Contact Us</h2>
                     <div class="content">
-                        <a href=""><img class="social-icons" src="{% static './images/icons/036-facebook.png' %}" alt=""></a>
-                        <a href=""><img class="social-icons" src="{% static './images/icons/008-twitter.png' %}" alt=""></a>
-                        <a href=""><img class="social-icons" src="{% static './images/icons/029-instagram.png' %}" alt=""></a>
-                        <a href=""><img class="social-icons" src="{% static './images/icons/033-google-plus.png' %}" alt=""></a>
+                        <a href=""><img class="social-icons" src="{% static 'images/icons/036-facebook.png' %}" alt=""></a>
+                        <a href=""><img class="social-icons" src="{% static 'images/icons/008-twitter.png' %}" alt=""></a>
+                        <a href=""><img class="social-icons" src="{% static 'images/icons/029-instagram.png' %}" alt=""></a>
+                        <a href=""><img class="social-icons" src="{% static 'images/icons/033-google-plus.png' %}" alt=""></a>
 
                         {% if user.is_authenticated %}
                         <p style="
@@ -299,7 +299,7 @@
     </footer>
 
 
-    <script src="{% static './js/app.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
 
 </body>
 
