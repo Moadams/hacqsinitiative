@@ -128,6 +128,75 @@
                 <a href="{% url 'team' %}" class="view-more-button">View More</a>
             </div>
     </section>
+
+    <footer>
+        <div class="welcome-container">
+            <div class="main-content">
+                <div class="footer-about box">
+                    <h2>About Us</h2>
+                    <div class="content">
+                        <p>
+                            Hacqs initiative Ghana, is a non-profit / non-government organisation established on March 1, 2020.
+                            This organisation was established to impact in the life of others. 
+                        </p>
+                    </div>
+
+                </div>
+                <div class="footer-location box">
+                    <h2>Location</h2>
+                    <div class="content">
+                        <ul>
+                            <li>Akwatia, Ghana</li>
+                            <li>0241735951</li>
+                            <li>hacqsinitiative@gmail.com</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="social box">
+                    <h2>Contact Us</h2>
+                    <div class="content">
+                        <a href=""><img class="social-icons" src="" alt=""></a>
+                        <a href=""><img class="social-icons" src=""></a>
+                        <a href=""><img class="social-icons" src="" alt=""></a>
+                        <a href=""><img class="social-icons" src="" alt=""></a>
+
+                        {% if user.is_authenticated %}
+                        <p style="
+                        text-transform: uppercase;
+                        font-size: 1.5rem;
+                        padding: 0;
+                        margin: 1.5rem 0;
+                        ">
+                        <a href="{% url 'logout_user' %}" style="color: white;" class="footer-btn">
+                            logout
+                        </a> 
+                    </p>
+                    {% else %}
+                    <p style="
+                    text-transform: uppercase;
+                        font-size: 1.5rem;
+                        padding: 0;
+                        margin: 1.5rem 0
+                        ">
+                        <a href="{% url 'login_user' %}" style="color: white;" class="">
+                            login
+                        </a> 
+                    </p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>
+                    Copyright &copy; HACQS INITIATIVE GHANA 2021
+                </p>
+            </div>
+        </div>
+    </footer>
+
     
 </body>
 </html>
