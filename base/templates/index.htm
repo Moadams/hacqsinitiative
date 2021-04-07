@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HACQS INITIATIVE | GHANA </title>
 
@@ -12,22 +12,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Merriweather+Sans:ital,wght@1,300&family=Open+Sans&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome -->
 
-
-
-    <!-- Custom CSS -->
+       <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static './css/style.css' %}">
 
     <!-- favicon -->
     <link rel="icon" href="./images/favicon.ico">
 
 
-
-
-
-
-
+    
     <style>
         .hero {
             width: 100%;
@@ -103,11 +96,8 @@
     </style>
 
 
-
 </head>
-
 <body>
-
     <header class="home-header">
         <div>
             <nav>
@@ -133,175 +123,5 @@
             </nav>
         </div>
     </header>
-
-    <section class="hero opening-section">
-        <div class="container">
-            <div class="main-message">
-                <h1>Welcome</h1>
-                <p style="font-weight: lighter;">
-                    HACQS INITIATIVE has a sole aim of helping the needy to help the appreciate life just like everyone else. We help them with the little that we have.
-                    <!-- You can also help us to help them by donating to our account, and we pledge to use it accordingly. -->
-
-                    <!-- <div class="view-more">
-                        <a href="{% url 'donate' %}" class="subscribe-btn" >Donate Now</a>
-                    </div> -->
-
-                </p>
-                <!-- <div class="cta">
-                    <a href="#" class="btn">Book Now</a>
-                </div> -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Welcome Section -->
-    <section class="welcome-section jumbo">
-        <div class="welcome-container">
-            <div class="custom-row">
-                <div class="col1 column">
-                    <img src="{% static './images/Felix.jpg' %}" alt="President" class="image-fluid">
-                </div>
-                <div class="col2 column">
-                    <h2>Welcome</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolorum, placeat nostrum repellat voluptatem vero adipisci asperiores, laboriosam unde doloribus quasi velit quis voluptates neque assumenda ducimus pariatur. Nesciunt, quis!
-
-                        <blockquote class="blockquote">
-                            <h6>Felix Nyarko - PRESIDENT</h6>
-                        </blockquote>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Meet the team Section -->
-    <section class="team-section jumbo">
-        <div class="welcome-container">
-            <h1 class="heading">Meet the team</h1>
-            <div class="card-wrapper">
-                
-                
-                <!-- CARDS -->
-
-                {% for executive in executives %}
-                <div class="card">
-                    <img src="{% static './images/background.jpg' %}" alt="background image" class="card-img">
-                    <img src="{{ executive.image.url }}" alt="profile image" class="profile-img">
-                    <h1>{{executive.name}}</h1>
-                    <p class="position" style="text-transform: uppercase;">{{executive.position}}</p>
-                    
-
-                    <ul class="social-media">
-                        <li>
-                            <a href="{{executive.facebook}}" target="_blank"><img class="social-icons" src="{% static './images/icons/036-facebook.png' %}" alt=""></a>
-                        </li>
-                        <li>
-                            <a href="{{executive.twitter}}" target="_blank"><img class="social-icons" src="{% static './images/icons/008-twitter.png' %}" alt=""></a>
-                        </li>
-                        <li>
-                            <a href="{{executive.instagram}}" target="_blank"><img class="social-icons" src="{% static './images/icons/029-instagram.png' %}" alt=""></a>
-                        </li>
-                        <!-- <li>
-                            <a href=""><img class="social-icons" src="{% static './images/icons/033-google-plus.png' %}" alt=""></a>
-                        </li> -->
-                    </ul>
-                </div>
-                {% endfor %}
-
-                
-            </div>
-            
-            <div class="view-more">
-                <a href="{% url 'team' %}" class="view-more-button">View More</a>
-            </div>
-    </section>
-
-
-    <!-- News letter -->
-    <!-- <div class="subscribe">
-        <h1>Subscribe to our news letter</h1>
-        <div>
-            <form action="">
-                <input type="email" name="client-email" id="client-email" placeholder="Email Address">
-                <a href="#" class="subscribe-btn">Subscribe</a>
-            </form>
-        </div>
-    </div> -->
-
-    <!-- footer -->
-    <footer>
-        <div class="welcome-container">
-            <div class="main-content">
-                <div class="footer-about box">
-                    <h2>About Us</h2>
-                    <div class="content">
-                        <p>
-                            Hacqs initiative Ghana, is a non-profit / non-government organisation established on March 1, 2020.
-                            This organisation was established to impact in the life of others. 
-                        </p>
-                    </div>
-
-                </div>
-                <div class="footer-location box">
-                    <h2>Location</h2>
-                    <div class="content">
-                        <ul>
-                            <li>Akwatia, Ghana</li>
-                            <li>0241735951</li>
-                            <li>hacqsinitiative@gmail.com</li>
-                        </ul>
-                    </div>
-
-                </div>
-                <div class="social box">
-                    <h2>Contact Us</h2>
-                    <div class="content">
-                        <a href=""><img class="social-icons" src="{% static './images/icons/036-facebook.png' %}" alt=""></a>
-                        <a href=""><img class="social-icons" src="{% static './images/icons/008-twitter.png' %}" alt=""></a>
-                        <a href=""><img class="social-icons" src="{% static './images/icons/029-instagram.png' %}" alt=""></a>
-                        <a href=""><img class="social-icons" src="{% static './images/icons/033-google-plus.png' %}" alt=""></a>
-
-                        {% if user.is_authenticated %}
-                        <p style="
-                        text-transform: uppercase;
-                        font-size: 1.5rem;
-                        padding: 0;
-                        margin: 1.5rem 0;
-                        ">
-                        <a href="{% url 'logout_user' %}" style="color: white;" class="footer-btn">
-                            logout
-                        </a> 
-                    </p>
-                    {% else %}
-                    <p style="
-                    text-transform: uppercase;
-                        font-size: 1.5rem;
-                        padding: 0;
-                        margin: 1.5rem 0
-                        ">
-                        <a href="{% url 'login_user' %}" style="color: white;" class="">
-                            login
-                        </a> 
-                    </p>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            <div class="container">
-                <p>
-                    Copyright &copy; HACQS INITIATIVE GHANA 2021
-                </p>
-            </div>
-        </div>
-    </footer>
-
-
-    <script src="{% static './js/app.js' %}"></script>
-
 </body>
-
 </html>
-
