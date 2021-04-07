@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Merriweather+Sans:ital,wght@1,300&family=Open+Sans&display=swap" rel="stylesheet">
 
     <!-- Custom CSS -->
-
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 
     <!-- favicon -->
@@ -142,7 +142,7 @@
         <div class="welcome-container">
             <div class="custom-row">
                 <div class="col1 column">
-                    <img src="" alt="President" class="image-fluid">
+                    <img src="{% static 'images/Felix.jpg' %}" alt="President" class="image-fluid">
                 </div>
                 <div class="col2 column">
                     <h2>Welcome</h2>
@@ -169,7 +169,7 @@
 
                 {% for executive in executives %}
                 <div class="card">
-                    <img src="" alt="background image" class="card-img">
+                    <img src="{% static 'images/background.jpg' %}" alt="background image" class="card-img">
                     <img src="{{ executive.image.url }}" alt="profile image" class="profile-img">
                     <h1>{{executive.name}}</h1>
                     <p class="position" style="text-transform: uppercase;">{{executive.position}}</p>
