@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HACQS INITIATIVE | GHANA </title>
 
@@ -12,20 +12,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Merriweather+Sans:ital,wght@1,300&family=Open+Sans&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome -->
-
-
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
+
     <!-- favicon -->
     
-
-
-
-
-
 
 
     <style>
@@ -102,18 +94,16 @@
     }
     </style>
 
-
+    
 
 </head>
-
 <body>
-
     <header class="home-header">
         <div>
             <nav>
                 <div class="nav-brand">
                     <a href="#">
-                        <img style="width: 5rem;" src="{% static 'images/transparent_logo(1).png' %}" alt="logo">
+                        <img style="width: 5rem;" src="" alt="logo">
                         <span class="nav-text">HACQS INITIATIVE GHANA</span>
                     </a>
                 </div>
@@ -159,7 +149,7 @@
         <div class="welcome-container">
             <div class="custom-row">
                 <div class="col1 column">
-                    <img src="{% static 'images/Felix.jpg' %}" alt="President" class="image-fluid">
+                    <img src="" alt="President" class="image-fluid">
                 </div>
                 <div class="col2 column">
                     <h2>Welcome</h2>
@@ -174,7 +164,7 @@
             </div>
         </div>
     </section>
-
+    
     <!-- Meet the team Section -->
     <section class="team-section jumbo">
         <div class="welcome-container">
@@ -186,7 +176,7 @@
 
                 {% for executive in executives %}
                 <div class="card">
-                    <img src="{% static 'images/background.jpg' %}" alt="background image" class="card-img">
+                    <img src="" alt="background image" class="card-img">
                     <img src="{{ executive.image.url }}" alt="profile image" class="profile-img">
                     <h1>{{executive.name}}</h1>
                     <p class="position" style="text-transform: uppercase;">{{executive.position}}</p>
@@ -194,17 +184,15 @@
 
                     <ul class="social-media">
                         <li>
-                            <a href="{{executive.facebook}}" target="_blank"><img class="social-icons" src="{% static './images/icons/036-facebook.png' %}" alt=""></a>
+                            <a href="{{executive.facebook}}" target="_blank"><img class="social-icons" src="" alt=""></a>
                         </li>
                         <li>
-                            <a href="{{executive.twitter}}" target="_blank"><img class="social-icons" src="{% static './images/icons/008-twitter.png' %}" alt=""></a>
+                            <a href="{{executive.twitter}}" target="_blank"><img class="social-icons" src="" alt=""></a>
                         </li>
                         <li>
-                            <a href="{{executive.instagram}}" target="_blank"><img class="social-icons" src="{% static './images/icons/029-instagram.png' %}" alt=""></a>
+                            <a href="{{executive.instagram}}" target="_blank"><img class="social-icons" src="" alt=""></a>
                         </li>
-                        <!-- <li>
-                            <a href=""><img class="social-icons" src="{% static './images/icons/033-google-plus.png' %}" alt=""></a>
-                        </li> -->
+                        
                     </ul>
                 </div>
                 {% endfor %}
@@ -217,19 +205,6 @@
             </div>
     </section>
 
-
-    <!-- News letter -->
-    <!-- <div class="subscribe">
-        <h1>Subscribe to our news letter</h1>
-        <div>
-            <form action="">
-                <input type="email" name="client-email" id="client-email" placeholder="Email Address">
-                <a href="#" class="subscribe-btn">Subscribe</a>
-            </form>
-        </div>
-    </div> -->
-
-    <!-- footer -->
     <footer>
         <div class="welcome-container">
             <div class="main-content">
@@ -257,10 +232,10 @@
                 <div class="social box">
                     <h2>Contact Us</h2>
                     <div class="content">
-                        <a href=""><img class="social-icons" src="{% static 'images/icons/036-facebook.png' %}" alt=""></a>
-                        <a href=""><img class="social-icons" src="{% static 'images/icons/008-twitter.png' %}" alt=""></a>
-                        <a href=""><img class="social-icons" src="{% static 'images/icons/029-instagram.png' %}" alt=""></a>
-                        <a href=""><img class="social-icons" src="{% static 'images/icons/033-google-plus.png' %}" alt=""></a>
+                        <a href=""><img class="social-icons" src="" alt=""></a>
+                        <a href=""><img class="social-icons" src=""></a>
+                        <a href=""><img class="social-icons" src="" alt=""></a>
+                        <a href=""><img class="social-icons" src="" alt=""></a>
 
                         {% if user.is_authenticated %}
                         <p style="
@@ -298,10 +273,6 @@
         </div>
     </footer>
 
-
-    <script src="{% static 'js/app.js' %}"></script>
-
+    
 </body>
-
 </html>
-
