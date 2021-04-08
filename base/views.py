@@ -290,3 +290,8 @@ def deleteExecutive(request,pk):
 # -------------------------------------------------------------------------------------
 def donate(request):
     return render(request, 'donate.htm')
+
+
+
+def error_404_view(request,exception):
+    return render(request, '404.html')
