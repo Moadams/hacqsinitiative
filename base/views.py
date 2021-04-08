@@ -241,7 +241,7 @@ def addExecutive(request):
         executiveForm = AddExecutiveForm(request.POST,request.FILES)
         if executiveForm.is_valid():
             executiveForm.save()
-            return redirect('team')
+            return redirect('home')
         
     context= {
         'form':executiveForm
