@@ -29,4 +29,5 @@ urlpatterns = [
     
     path('donate/',views.donate, name = 'donate'),
     
+    
 ]

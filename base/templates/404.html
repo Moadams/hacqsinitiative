@@ -1,14 +1,56 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 Error</title>
+
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(66, 72, 201, 0.6)0%, rgba(163, 86, 63,0.5));
+            
+        }
+        .container{
+            width: 100%;
+            color: #343434;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+        .container h1{
+            font-size: 160px;
+            font-weight: 900;
+            margin:0;
+            letter-spacing:20px;
+        }
+
+        .container a{
+            text-decoration: none;
+            background: rgb(223, 89, 36);
+            border-radius: 10px;
+            padding: 5px 10px;
+            color: white;
+        }
+        a:hover{
+            background-color: rgb(206, 67, 12);
+            transition: .5s ease
+        }
+    </style>
 </head>
 <body>
     <h1>
-        404 Error
+        <div class="container">
+            <h2>Oops! Page Not Found</h2>
+            <h1>404</h1>
+            <p>We cannot find the page you are looking for.</p>
+            <a href="{% url 'home' %}">Go Back Home</a>
+        </div>
     </h1>
 </body>
 </html>
